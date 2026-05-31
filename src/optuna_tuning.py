@@ -4,10 +4,10 @@ import numpy as np
 import optuna
 import os, gc
 from pathlib import Path
-from train_utils import *
-from preprocessing import reduce_q8_to_q3
-from pssp_encoder import PSSPEncoder
-from config import Config
+from src.train_utils import *
+from src.preprocessing import reduce_q8_to_q3
+from src.pssp_encoder import PSSPEncoder
+from src.config import Config
 
 #########  Module-level configuration #########
 cfg        = Config()

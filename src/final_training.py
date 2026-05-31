@@ -2,12 +2,12 @@ import torch
 import torch.nn as nn
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
-from train_utils import *
-from preprocessing import reduce_q8_to_q3
-from pssp_encoder import EnsemblePSSP, build_base_model
-from save_predictions import *
+from src.train_utils import *
+from src.preprocessing import reduce_q8_to_q3
+from src.pssp_encoder import EnsemblePSSP, build_base_model
+from src.save_predictions import *
 import os, gc, joblib
-from config import Config
+from src.config import Config
 
 ######### Module-level configuration #########
 cfg = Config()
@@ -212,8 +212,8 @@ def main():
 
         # Code 4: RF + ER post-processing on eval sets → FASTA
         elif code == 4:
-            from preprocessing import parse_int_to_q3
-            from external_rules import apply_all_q3_rules
+            from src.preprocessing import parse_int_to_q3
+            from src.external_rules import apply_all_q3_rules
 
             for run_config_name, run_config in final_runs.items():
                 initial_state = run_config_name.split('_')[1]

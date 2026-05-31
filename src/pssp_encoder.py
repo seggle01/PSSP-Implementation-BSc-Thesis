@@ -12,7 +12,7 @@ Last Modified: 28/05/2026
 import torch
 import torch.nn as nn
 from math import sqrt, log
-from config import Config
+from src.config import Config
 
 #########  Module-level configuration #########
 cfg       = Config()

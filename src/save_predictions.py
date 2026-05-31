@@ -4,9 +4,9 @@ import numpy as np
 import torch.nn as nn
 import torch.nn.functional as F
 import os
-from train_utils import load_npz_dataset, batch_iterator
-from preprocessing import parse_int_to_q3, parse_int_to_q8, reduce_q8_to_q3
-from config import Config
+from src.train_utils import load_npz_dataset, batch_iterator
+from src.preprocessing import parse_int_to_q3, parse_int_to_q8, reduce_q8_to_q3
+from src.config import Config
 
 ######### Module-level configuration #########
 cfg        = Config()

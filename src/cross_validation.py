@@ -1,12 +1,12 @@
 import torch
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
-from train_utils import *
-from preprocessing import reduce_q8_to_q3
-from pssp_encoder import build_base_model, EnsemblePSSP
-from save_predictions import *
+from src.train_utils import *
+from src.preprocessing import reduce_q8_to_q3
+from src.pssp_encoder import build_base_model, EnsemblePSSP
+from src.save_predictions import *
 import os, gc, joblib
-from config import Config
+from src.config import Config
 
 ######### Module-level configuration #########
 cfg = Config()

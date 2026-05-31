@@ -3,9 +3,9 @@ import torch.nn as nn
 import os, json, random
 import optuna
 import numpy as np
-from config import Config
+from src.config import Config
 from torch.optim.lr_scheduler import CosineAnnealingLR
-from preprocessing import reduce_q8_to_q3
+from src.preprocessing import reduce_q8_to_q3
 from tqdm import tqdm
 
 ######### Module-level configuration #########

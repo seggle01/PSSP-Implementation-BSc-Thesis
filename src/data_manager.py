@@ -3,8 +3,8 @@ import torch
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
-from preprocessing import preprocess_tgt_Q3, preprocess_tgt_Q8
-from config import Config
+from src.preprocessing import preprocess_tgt_Q3, preprocess_tgt_Q8
+from src.config import Config
 
 ######### Module-level configuration #########
 cfg       = Config()
