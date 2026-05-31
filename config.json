@@ -1,0 +1,129 @@
+{
+    "DEVICE": "cuda",
+    "SEEDS": [42, 123, 1337],
+    "DEFAULT_SEED": 42,
+    "ESM2": {
+        "model_name": "facebook/esm2_t33_650M_UR50D",
+        "embed_dim": 1280
+    },
+    "PATHS": {
+        "data_dir": "./data",
+        "embed_dir": "./data/embeddings_dir",
+        "tuning_dir": "./optuna_results",
+        "cv_models": "./weights/cross_validation",
+        "evaluation_models": "./weights/evaluation",
+        "training_curves": "./training_curves",
+        "cv_fasta": "./fasta_results/cross_validation",
+        "evaluation_fasta": "./fasta_results/evaluation",
+        "cv_rf_dir": "./rf/cross_validation",
+        "evaluation_rf_dir": "./rf/evaluation"
+    },
+    "MODEL_CONFIG": {
+        "3class_params": {
+            "tokens": 5,
+            "d_ff_multiplier": 4,
+            "num_heads": 16,
+            "layers": 6,
+            "mlp_multiplier": 7,
+            "dropout": 0.1,
+            "learning_rate": 0.0001,
+            "weight_decay": 1.8e-05,
+            "num_classes": 3
+        },
+        "8class_params": {
+            "tokens": 10,
+            "d_ff_multiplier": 5,
+            "num_heads": 8,
+            "layers": 7,
+            "mlp_multiplier": 6,
+            "dropout": 0.1,
+            "learning_rate": 0.0002,
+            "weight_decay": 0.0013,
+            "num_classes": 8
+        }
+    },
+    "TRAINING_CONFIG": {
+        "split": 0.8,
+        "3class_epochs": 50,
+        "8class_epochs": 60,
+        "beta_1": 0.9,
+        "beta_2": 0.95,
+        "eta_min": 1e-06,
+        "batch_size": 256
+    },
+    "TUNING_TRIALS": 30,
+    "TUNING": {
+        "NetsurfP_3class": {
+            "train_folds": [0, 1, 2],
+            "val_fold": 3,
+            "epochs": 20,
+            "fold_prefix": "train_fold",
+            "study_name": "pssp_3class",
+            "db_name": "study_3class.db"
+        },
+        "NetsurfP_8class": {
+            "train_folds": [0, 1, 2],
+            "val_fold": 3,
+            "epochs": 30,
+            "fold_prefix": "train_fold",
+            "study_name": "pssp_8class",
+            "db_name": "study_8class.db"
+        }
+    },
+    "USE_8CLASS": "NetsurfP_3class",
+    "CV_RUNS": {
+        "PISCES_3class": {
+            "patience": 10,
+            "n_folds": 5,
+            "fold_prefix": "pisces_fold"
+        },
+        "NetsurfP_3class": {
+            "patience": 10,
+            "n_folds": 7,
+            "fold_prefix": "train_fold"
+        },
+        "NetsurfP_8class": {
+            "patience": 15,
+            "n_folds": 7,
+            "fold_prefix": "train_fold"
+        }
+    },
+    "FINAL_TRAINING": {
+        "PISCES_3class": {
+            "patience": 5,
+            "n_folds": 5,
+            "fold_prefix": "pisces_fold",
+            "evaluation": [
+                "CASP13"
+            ]
+        },
+        "NetsurfP_3class": {
+            "patience": 5,
+            "n_folds": 7,
+            "fold_prefix": "train_fold",
+            "evaluation": [
+                "CB513",
+                "CASP12",
+                "TS115"
+            ]
+        },
+        "NetsurfP_8class": {
+            "patience": 10,
+            "n_folds": 7,
+            "fold_prefix": "train_fold",
+            "evaluation": [
+                "CB513",
+                "CASP12",
+                "TS115"
+            ]
+        }
+    },
+    "WINDOW_SIZE": 31,
+    "RF_CONFIG": {
+        "n_estimators": 100,
+        "max_depth": 25,
+        "max_features": "sqrt",
+        "min_samples_leaf": 2,
+        "class_weight": "balanced"
+    }
+}
