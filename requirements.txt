@@ -4,6 +4,9 @@ torch==2.7.1+cu128
 matplotlib
 pandas
 numpy
+tqdm
+joblib
+scikit-learn
 optuna
 # Hugging Face
 transformers
