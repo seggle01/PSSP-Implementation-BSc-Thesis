@@ -1,1 +1,3 @@
 *.npz
+*.pkl
+results/fasta/window_sweep/
