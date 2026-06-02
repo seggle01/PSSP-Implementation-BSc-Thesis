@@ -1,3 +1,7 @@
 *.npz
 *.pkl
 results/fasta/window_sweep/
+results/excel/
+MISC/PSSP_Thesis_Presentation.pptx
+results/fasta/SOV_refine
+.vscode
