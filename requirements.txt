@@ -8,6 +8,5 @@ tqdm
 joblib
 scikit-learn
 optuna
-# Hugging Face
+openpyxl
 transformers
-datasets
