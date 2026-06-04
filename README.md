@@ -262,6 +262,8 @@ FASTA pairs under `SOV_refine/predictions/`.
 
 ---
 
-## Author
+## License
 
-**Stefanos Englezou**
+Released under the MIT License —  See [`LICENSE`](LICENSE).
+
+Copyright (c) 2026 Stefanos Englezou
