@@ -9,7 +9,7 @@ smoother and the external/empirical rules of **Salamov and Solovyev**.
 <p align="left">
   <img alt="Python" src="https://img.shields.io/badge/python-3.11-blue.svg">
   <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white">
-  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green.svg"></a>
+  <a href="LICENSE"><img alt="License: GPLv3" src="https://img.shields.io/badge/license-GPLv3-blue.svg"></a>
 </p>
 
 ---
@@ -265,6 +265,6 @@ FASTA pairs under `SOV_refine/predictions/`.
 
 ## License
 
-Released under the MIT License —  See [`LICENSE`](LICENSE).
+Released under the GNU General Public License v3.0 — See [`LICENSE`](LICENSE).
 
 Copyright (c) 2026 Stefanos Englezou
