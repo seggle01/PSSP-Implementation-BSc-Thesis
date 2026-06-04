@@ -9,6 +9,7 @@ smoother and the external/empirical rules of **Salamov and Solovyev**.
 <p align="left">
   <img alt="Python" src="https://img.shields.io/badge/python-3.11-blue.svg">
   <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green.svg"></a>
 </p>
 
 ---
